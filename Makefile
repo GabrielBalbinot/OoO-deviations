@@ -17,7 +17,7 @@ CFLAGS := -static -g
 SCRIPT_INORDER  := $(MODELS)/inorder.py
 SCRIPT_OUTORDER := $(MODELS)/outorder.py
 
-SIZES    := 8 16 32 64
+SIZES    := 8 16 32 64 
 BP_TYPES := LocalBP BiModeBP
 
 GREEN  := \033[0;32m

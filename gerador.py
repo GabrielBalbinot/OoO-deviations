@@ -14,7 +14,7 @@ def gerar_caso(n, seed=42):
     Retorna a string de entrada para o programa.
     """
     random.seed(seed)
-    valores = random.sample(range(-99, 100), n)
+    valores = random.sample(range(-99, 100000), n)
     linhas = []
 
     # inserções
@@ -59,9 +59,10 @@ def gerar_caso(n, seed=42):
 
 
 def main():
+    sizes = [4, 8, 16, 32]
     parser = argparse.ArgumentParser(description="Gerador de casos de teste para BST")
     parser.add_argument("--output-dir", default="testes", help="Diretório de saída")
-    parser.add_argument("--sizes", nargs="+", type=int, default=[8, 16, 32, 64],
+    parser.add_argument("--sizes", nargs="+", type=int, default=sizes,
                         help="Tamanhos dos casos de teste")
     parser.add_argument("--seed", type=int, default=42, help="Seed base para geração")
     args = parser.parse_args()

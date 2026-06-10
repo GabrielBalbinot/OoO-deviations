@@ -31,7 +31,7 @@ menu:
 
 continue_menu:
     la   a0, _newline
-    call printf
+    # call printf
     j    menu
 
 end_menu:
@@ -42,12 +42,12 @@ end_menu:
     call exit
 
 printMenu:
-    la   a0, _menu
+    /*la   a0, _menu
     call printf
     la   a0, _menu1
     call printf
     la   a0, _menu2
-    call printf
+    call printf*/
 
 inputMenu:
     la   a0, _scanf_fmt
@@ -90,7 +90,7 @@ inputValue:
     sw   ra, 0(sp)
 
     la   a0, _scanf_prompt
-    call printf
+    # call printf
 
     la   a0, _scanf_fmt
     la   a1, input_buf
