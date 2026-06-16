@@ -122,7 +122,7 @@ insert:
 
 valueExists:
     la   a0, _valueAlreadyExists_str
-    call printf
+    # call printf
 
 end_insert_:
     lw   s1, 4(sp)
@@ -157,12 +157,12 @@ search:
 value_found:
     mv   a1, a0
     la   a0, _valueAtAddress
-    call printf
+    # call printf
     j    end_search
 
 value_not_found:
     la   a0, _valueNotExists
-    call printf
+    # call printf
 
 end_search:
     lw   ra, 0(sp)
@@ -177,7 +177,7 @@ pre:
     mv   a0, s0
     jal  preorder
     la   a0, _newline
-    call printf
+    # call printf
 
     lw   ra, 0(sp)
     addi sp, sp, 4
@@ -191,7 +191,7 @@ in:
     mv   a0, s0
     jal  inorder
     la   a0, _newline
-    call printf
+    # call printf
 
     lw   ra, 0(sp)
     addi sp, sp, 4
@@ -205,7 +205,7 @@ post:
     mv   a0, s0
     jal  postorder
     la   a0, _newline
-    call printf
+    # call printf
 
     lw   ra, 0(sp)
     addi sp, sp, 4
@@ -236,7 +236,7 @@ max:
 
     lw   a1, 0(a0)      # node->value
     la   a0, _maxOutput
-    call printf
+    # call printf
 
     lw   ra, 0(sp)
     addi sp, sp, 4
@@ -252,7 +252,7 @@ min:
 
     lw   a1, 0(a0)      # node->value
     la   a0, _minOutput
-    call printf
+    # call printf
 
     lw   ra, 0(sp)
     addi sp, sp, 4
@@ -260,7 +260,7 @@ min:
 
 emptyTree:
     la   a0, _emptyTree
-    call printf
+    # call printf
     la   a0, _emptyTreeOps
-    call printf
+    # call printf
     j    continue_menu

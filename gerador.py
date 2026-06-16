@@ -13,8 +13,11 @@ def gerar_caso(n, seed=42):
     Gera um caso de teste com n inserções, buscas e deleções.
     Retorna a string de entrada para o programa.
     """
+
+    seed = random.randint(0, 1000000)
+
     random.seed(seed)
-    valores = random.sample(range(-99, 100000), n)
+    valores = random.sample(range(-2147483648, 2147483647), n)
     linhas = []
 
     # inserções
@@ -23,13 +26,19 @@ def gerar_caso(n, seed=42):
         linhas.append(str(v))
 
     # busca que existe (hit)
-    busca_hit = random.choice(valores)
-    linhas.append("3")
-    linhas.append(str(busca_hit))
+    valores_para_busca = random.sample(range(-2147483648, 2147483647), n//10)
+    
 
-    # busca que não existe (miss)
-    linhas.append("3")
-    linhas.append("999")
+    # mix de busca e deleção de alguns valores (hit e miss), para testar ambos os casos
+    # n/10
+    op = 1
+    for v in valores_para_busca:
+        if op == 1:
+            linhas.append("3")
+        else:
+            linhas.append("2")
+        linhas.append(str(v))
+        op *= -1
 
     # inorder
     linhas.append("5")

@@ -206,7 +206,7 @@ print_node:
 
     lw   a1, 0(a0)      # a1 = node->value
     la   a0, fmt_int
-    call printf         # printf("%d ", value)
+    # call printf         # printf("%d ", value)
 
     lw   a0, 4(sp)
     lw   ra, 0(sp)
@@ -227,7 +227,7 @@ printTree:
 
     jal  print_node
     la   a0, fmt_newline
-    call printf
+    # call printf
     j    printTree_nextNodes
 
 not_root:
@@ -250,17 +250,17 @@ end_print_spaces:
     bnez a2, print_P2
 print_P1:
     la   a0, .P1
-    call printf
+    # call printf
     j    post_Ps
 print_P2:
     la   a0, .P2
-    call printf
+    # call printf
 
 post_Ps:
     mv   a0, t0
     jal  print_node
     la   a0, fmt_newline
-    call printf
+    # call printf
 
 printTree_nextNodes:
     lw   a0, 4(sp)

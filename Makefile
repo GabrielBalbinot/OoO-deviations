@@ -17,7 +17,11 @@ CFLAGS := -static -g
 SCRIPT_INORDER  := $(MODELS)/inorder.py
 SCRIPT_OUTORDER := $(MODELS)/outorder.py
 
-SIZES    := 8 16 32 64 
+
+# trocar os tamanhos como achar necessário, pode colocar todos os tamanhos aqui
+# múltiplos de 2, simulação provalvemente durará horas...
+SIZES    := 256 512 1024 2048 4096 8192 16384 32768 65536 131072 262144 524288 1048576
+
 BP_TYPES := LocalBP BiModeBP
 
 GREEN  := \033[0;32m
