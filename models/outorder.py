@@ -43,7 +43,7 @@ cache_hierarchy = PrivateL1PrivateL2CacheHierarchy(
 memory = SingleChannelDDR3_1600("512MB")
 
 board = SimpleBoard(
-    clk_freq="3GHz",
+    clk_freq="1GHz",
     processor=processor,
     memory=memory,
     cache_hierarchy=cache_hierarchy,

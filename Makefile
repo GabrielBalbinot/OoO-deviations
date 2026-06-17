@@ -111,7 +111,7 @@ run-inorder-bimode: build gerar-testes
 run-inorder: run-inorder-local run-inorder-bimode
 
 # --- Roda tudo ----------------------------------------------------------------
-run-all: run-outorder run-inorder
+run: run-outorder
 	@echo "$(GREEN)=== Todas as simulações concluídas! ===$(RESET)"
 	@echo "Resultados em: $(RESULTS_DIR)"
 
@@ -130,8 +130,7 @@ stats:
 # --- Limpeza ------------------------------------------------------------------
 clean:
 	rm -f $(BINARY)
-	rm -rf $(RESULTS_DIR) $(TESTES_DIR)
-	rm -f $(BINARY)
+	rm -rf $(TESTES_DIR)
 	rm -rf $(RESULTS_DIR)
 	@echo "$(GREEN)Limpo!$(RESET)"	
 
@@ -142,7 +141,7 @@ help:
 	@echo "  make gerar-testes        — gera casos de teste (n=8,16,32,64)"
 	@echo "  make run-outorder-local  — OoO + LocalBP para todos os casos"
 	@echo "  make run-outorder-bimode — OoO + BiModeBP para todos os casos"
-	@echo "  make run-outorder        — OoO com LocalBP e BiModeBP"
+	@echo "  make run                 — OoO com LocalBP e BiModeBP"
 	@echo "  make run-inorder         — InOrder com LocalBP e BiModeBP"
 	@echo "  make run-all             — todos os modelos e preditores"
 	@echo "  make stats               — exibe métricas de todos os resultados"
